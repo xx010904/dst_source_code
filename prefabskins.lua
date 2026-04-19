@@ -129,6 +129,7 @@ PREFAB_SKINS = {
 		"armor_wood_haramaki",
 		"armor_wood_lamellar",
 		"armor_wood_roman",
+		"armor_wood_rw_gustree",
 	},
 	arrowsign_post =
 	{
@@ -170,6 +171,7 @@ PREFAB_SKINS = {
 		"backpack_glommer_resurrected",
 		"backpack_heart",
 		"backpack_hound",
+		"backpack_invisible",
 		"backpack_koalefant",
 		"backpack_labrat",
 		"backpack_mandrake",
@@ -215,6 +217,7 @@ PREFAB_SKINS = {
 		"beebox_crystal",
 		"beebox_garden",
 		"beebox_house",
+		"beebox_insect",
 		"beebox_victorian",
 	},
 	beebox_hermit =
@@ -454,6 +457,14 @@ PREFAB_SKINS = {
 		"cookpot_survival",
 		"cookpot_tureen",
 	},
+	critter_bulbin =
+	{
+		"bulbin_rw_basic",
+	},
+	critter_bulbin_builder =
+	{
+		"bulbin_rw_basic_builder",
+	},
 	critter_dragonling =
 	{
 		"dragonling_bat",
@@ -673,6 +684,7 @@ PREFAB_SKINS = {
 		"eyebrellahat_adventure",
 		"eyebrellahat_crystal",
 		"eyebrellahat_fantasy",
+		"eyebrellahat_insect",
 		"eyebrellahat_rose",
 		"eyebrellahat_victorian",
 	},
@@ -778,6 +790,7 @@ PREFAB_SKINS = {
 		"firestaff_meteor",
 		"firestaff_northern",
 		"firestaff_rose",
+		"firestaff_rw_swamp",
 	},
 	firesuppressor =
 	{
@@ -813,6 +826,7 @@ PREFAB_SKINS = {
 		"footballhat_combathelm",
 		"footballhat_combathelm2",
 		"footballhat_hockey",
+		"footballhat_rw_gustree",
 		"footballhat_western",
 		"hat_dog_helm",
 	},
@@ -900,6 +914,7 @@ PREFAB_SKINS = {
 		"hammer_forge",
 		"hammer_hammush",
 		"hammer_invisible",
+		"hammer_rw_startingforest",
 	},
 	hawaiianshirt =
 	{
@@ -1017,6 +1032,7 @@ PREFAB_SKINS = {
 		"icestaff_lance",
 		"icestaff_northern",
 		"icestaff_rose",
+		"icestaff_rw_swamp",
 	},
 	insanityrock =
 	{
@@ -1084,6 +1100,7 @@ PREFAB_SKINS = {
 	magician_chest =
 	{
 		"magician_chest_shadow",
+		"magician_chest_shadow_resurrected",
 	},
 	mast =
 	{
@@ -1463,6 +1480,7 @@ PREFAB_SKINS = {
 		"researchlab2_gothic",
 		"researchlab2_pod",
 		"researchlab2_science",
+		"researchlab2_science_resurrected",
 	},
 	researchlab3 =
 	{
@@ -1645,6 +1663,7 @@ PREFAB_SKINS = {
 		"spear_northern",
 		"spear_ragged",
 		"spear_rose",
+		"spear_rw_swamp",
 		"spear_simple",
 	},
 	spear_wathgrithr =
@@ -1896,6 +1915,10 @@ PREFAB_SKINS = {
 		"umbrella_heart",
 		"umbrella_parasol",
 		"umbrella_spider",
+	},
+	w_radio =
+	{
+		"w_radio_basic",
 	},
 	wagdrone_rolling =
 	{
@@ -2659,6 +2682,7 @@ PREFAB_SKINS = {
 	},
 	wx78 =
 	{
+		"wx78_ancient",
 		"wx78_combatant",
 		"wx78_cook",
 		"wx78_formal",
@@ -2686,22 +2710,70 @@ PREFAB_SKINS = {
 		"wx78_wrestler",
 		"wx78_yule",
 	},
+	wx78_drone_delivery =
+	{
+		"wx78_dronedelivery_gothic",
+		"wx78_dronedelivery_jewelbox",
+	},
+	wx78_drone_delivery_item =
+	{
+		"wx78_dronedelivery_item_gothic",
+		"wx78_dronedelivery_item_jewelbox",
+	},
+	wx78_drone_delivery_small =
+	{
+		"wx78_dronedeliverysmall_gothic",
+		"wx78_dronedeliverysmall_jewelbox",
+	},
+	wx78_drone_delivery_small_item =
+	{
+		"wx78_dronedeliverysmall_item_gothic",
+		"wx78_dronedeliverysmall_item_jewelbox",
+	},
+	wx78_drone_scout =
+	{
+		"wx78_dronescout_gothic",
+		"wx78_dronescout_jewelbox",
+	},
+	wx78_drone_zap =
+	{
+		"wx78_dronezap_gothic",
+		"wx78_dronezap_gothic_overlay",
+		"wx78_dronezap_jewelbox",
+		"wx78_dronezap_jewelbox_overlay",
+	},
+	wx78_drone_zap_remote =
+	{
+		"wx78_dronezapremote_gothic",
+		"wx78_dronezapremote_jewelbox",
+	},
+	wx78_moduleremover =
+	{
+		"wx78_moduleremover_gothic",
+		"wx78_moduleremover_jewelbox",
+	},
 	wx78_scanner =
 	{
 		"wx78_scanner_catcoon",
 		"wx78_scanner_fancy",
+		"wx78_scanner_gothic",
+		"wx78_scanner_jewelbox",
 		"wx78_scanner_junky",
 	},
 	wx78_scanner_item =
 	{
 		"wx78_scanner_catcoon_item",
 		"wx78_scanner_fancy_item",
+		"wx78_scanner_gothic_item",
+		"wx78_scanner_jewelbox_item",
 		"wx78_scanner_junky_item",
 	},
 	wx78_scanner_succeeded =
 	{
 		"wx78_scanner_succeeded_catcoon",
 		"wx78_scanner_succeeded_fancy",
+		"wx78_scanner_succeeded_gothic",
+		"wx78_scanner_succeeded_jewelbox",
 		"wx78_scanner_succeeded_junky",
 	},
 	yellowamulet =
@@ -2742,6 +2814,9 @@ PREFAB_SKINS_SHOULD_NOT_SELECT = {
 	["treasurechest_upgraded_traincase"] = true,
 	["treasurechest_upgraded_traveltrunk"] = true,
 	["treasurechest_upgraded_vintage"] = true,
+	["w_radio"] = true,
+	["critter_bulbin"] = true,
+	["critter_bulbin_builder"] = true,
 }
 
 

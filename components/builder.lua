@@ -280,7 +280,21 @@ function Builder:EvaluateTechTrees()
 							local recipe = GetValidRecipe(recname)
 							if recipe and recipe.nounlock then
 								--only nounlock recipes can be unlocked via crafting station
-								self.station_recipes[recname] = v.components.craftingstation:GetRecipeCraftingLimit(recipe.name) or true
+                                local has_unlocked_skin = false
+                                if recipe.unlocks_from_skin and (recipe.unlocks_from_skin == SKINUNLOCKS.CRAFTINGSTATION) and self.inst.isplayer then
+                                    local prefabskins = PREFAB_SKINS[recipe.product]
+                                    if prefabskins ~= nil then
+                                        for _, skin in ipairs(prefabskins) do
+                                            if TheInventory:CheckClientOwnership(self.inst.userid, skin) then
+                                                has_unlocked_skin = true
+                                                break
+                                            end
+                                        end
+                                    end
+                                else
+                                    has_unlocked_skin = true
+                                end
+                                self.station_recipes[recname] = v.components.craftingstation:GetRecipeCraftingLimit(recipe.name) or has_unlocked_skin or nil
 							end
 						end
 					end
@@ -503,6 +517,7 @@ function Builder:CheckIngredientsForMimic(ingredients)
     for _, ents in pairs(ingredients) do
         for item in pairs(ents) do
             if item.components.itemmimic then
+                -- Do not check ShouldItemMimicBeRevealedFor here, ingredients must be earned.
                 item.components.itemmimic:TurnEvil(self.inst)
                 return true
             end
@@ -517,6 +532,7 @@ function Builder:CheckDiscountEquipsForMimic()
     if self.inst.components.inventory then
         for slot, item in pairs(self.inst.components.inventory.equipslots) do
             if item and item.prefab == "greenamulet" and item.components.itemmimic then
+                -- Do not check ShouldItemMimicBeRevealedFor here, ingredients must be earned.
                 item.components.itemmimic:TurnEvil(self.inst)
                 return true
             end
@@ -658,6 +674,9 @@ function Builder:DoBuild(recname, pt, rotation, skin)
             return false
         end
 
+        if recipe.unlocks_from_skin and not skin then
+            return false
+        end
         if recipe.canbuild ~= nil then
 			local success, msg = recipe.canbuild(recipe, self.inst, pt, rotation, self.current_prototyper, skin)
 			if not success then
@@ -824,15 +843,21 @@ function Builder:KnowsRecipe(recipe, ignore_tempbonus, cached_tech_trees)
 		return true
 	end
 
+    local has_unlocked_skin = false
     if recipe.unlocks_from_skin and self.inst.isplayer then
         local prefabskins = PREFAB_SKINS[recipe.product]
         if prefabskins ~= nil then
-            local unlockableskins = TheInventory:GetClientUnlockableItems(self.inst.userid)
             for _, skin in ipairs(prefabskins) do
-                if unlockableskins[skin] then
-                    return true
+                if TheInventory:CheckClientOwnership(self.inst.userid, skin) then
+                    has_unlocked_skin = true
+                    if recipe.unlocks_from_skin == SKINUNLOCKS.ALWAYS then
+                        return true
+                    end
                 end
             end
+        end
+        if recipe.unlocks_from_skin == SKINUNLOCKS.ALWAYS then
+            return false
         end
     end
 
@@ -851,10 +876,16 @@ function Builder:KnowsRecipe(recipe, ignore_tempbonus, cached_tech_trees)
 	--
 
 	if self.station_recipes[recipe.name] or table.contains(self.recipes, recipe.name) then
-		return true
+        if recipe.unlocks_from_skin then
+            return has_unlocked_skin
+        end
+        return true
 	end
 
     if cached_tech_trees and cached_tech_trees[recipe.level] ~= nil then
+        if recipe.unlocks_from_skin then
+            return has_unlocked_skin and cached_tech_trees[recipe.level]
+        end
         return cached_tech_trees[recipe.level]
     end
     for i, v in ipairs(TechTree.AVAILABLE_TECH) do
@@ -873,6 +904,9 @@ function Builder:KnowsRecipe(recipe, ignore_tempbonus, cached_tech_trees)
     if cached_tech_trees then
         cached_tech_trees[recipe.level] = true
     end
+    if recipe.unlocks_from_skin then
+        return has_unlocked_skin
+    end
     return true
 end
 
@@ -884,6 +918,9 @@ function Builder:HasIngredients(recipe)
 		if self.freebuildmode then
 			return true
 		end
+        if recipe.getlimitedrecipecount and recipe:getlimitedrecipecount(self.inst) <= 0 then
+            return false
+        end
 		for i, v in ipairs(recipe.ingredients) do
             if not self.inst.components.inventory:Has(v.type, math.max(1, RoundBiasedUp(v.amount * self.ingredientmod)), true) then
 				return false

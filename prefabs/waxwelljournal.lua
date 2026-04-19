@@ -1,4 +1,4 @@
-local a1sets =
+local assets =
 {
 	Asset("ANIM", "anim/book_maxwell.zip"),
 	Asset("INV_IMAGE", "waxwelljournal_open"),

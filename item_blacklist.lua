@@ -46,6 +46,7 @@ ITEM_DISPLAY_BLACKLIST =
 	boat_pirate_skin_item = true,
 	boat_tesla_item = true,
 	boat_wagstaff_item = true,
+	bulbin_rw_basic_builder = true,
 	bundlewrap_cawnival = true,
 	bundlewrap_gothic = true,
 	bundlewrap_kitchen = true,
@@ -120,6 +121,7 @@ ITEM_DISPLAY_BLACKLIST =
 	firestaff_lance = true,
 	firestaff_northern = true,
 	firestaff_rose = true,
+	firestaff_rw_swamp = true,
 	gemsocket_crystal = true,
 	gemsocket_hallowpylon = true,
 	gemsocket_mystical = true,
@@ -141,6 +143,7 @@ ITEM_DISPLAY_BLACKLIST =
 	icestaff_lance = true,
 	icestaff_northern = true,
 	icestaff_rose = true,
+	icestaff_rw_swamp = true,
 	insanityrock_fantasy = true,
 	insanityrock_gothic = true,
 	kitten_black_builder = true,
@@ -329,11 +332,25 @@ ITEM_DISPLAY_BLACKLIST =
 	woby_big_ribbon = true,
 	woby_big_ribbon_lunar = true,
 	woby_big_ribbon_shadow = true,
+	wx78_dronedelivery_gothic = true,
+	wx78_dronedelivery_item_gothic = true,
+	wx78_dronedelivery_item_jewelbox = true,
+	wx78_dronedelivery_jewelbox = true,
+	wx78_dronedeliverysmall_item_gothic = true,
+	wx78_dronedeliverysmall_item_jewelbox = true,
+	wx78_dronezap_gothic = true,
+	wx78_dronezap_gothic_overlay = true,
+	wx78_dronezap_jewelbox = true,
+	wx78_dronezap_jewelbox_overlay = true,
 	wx78_scanner_catcoon_item = true,
 	wx78_scanner_fancy_item = true,
+	wx78_scanner_gothic_item = true,
+	wx78_scanner_jewelbox_item = true,
 	wx78_scanner_junky_item = true,
 	wx78_scanner_succeeded_catcoon = true,
 	wx78_scanner_succeeded_fancy = true,
+	wx78_scanner_succeeded_gothic = true,
+	wx78_scanner_succeeded_jewelbox = true,
 	wx78_scanner_succeeded_junky = true,
 	beebox_hermit_yule = true,
 	hermit_chair_rocking_yule = true,
@@ -360,11 +377,14 @@ ITEM_DISPLAY_BLACKLIST =
 	meatrack_hermit_yule = true,
 	pumpkinhat_2 = true,
 	pumpkinhat_3 = true,
+	w_radio_basic = true,
 }
 
 HIDE_SKIN_DECORATIONS =
 {
 	beebox_hermit_yule = true,
+	bulbin_rw_basic = true,
+	bulbin_rw_basic_builder = true,
 	hermit_chair_rocking_yule = true,
 	hermitcrab_lightpost_yule = true,
 	hermitcrab_teashop_yule = true,
@@ -387,6 +407,7 @@ HIDE_SKIN_DECORATIONS =
 	hermithouse_yule = true,
 	meatrack_hermit_multi_yule = true,
 	meatrack_hermit_yule = true,
+	w_radio_basic = true,
 }
 
 SKINS_EVENTLOCK =
@@ -412,5 +433,11 @@ SKINS_EVENTLOCK =
 
 UNLOCKABLE_SKINS =
 {
+	w_radio_basic = true,
+}
+
+CRAFTING_RECIPE_UNLOCKED_SKIN =
+{
+	bulbin_rw_basic = true,
 }
 

@@ -37,7 +37,7 @@ local function AddSkinSounds(inst)
         inst.skin_wrap_sound = sounds.wrap
         -- Bug Net
         inst.overridebugnetsound = sounds.net
-        -- Glomling, reviver, staff
+        -- Glomling [string], reviver [string], staff [string], WX-78 scanner [table]
         inst.skin_sound = sounds.genericuse -- FIXME(JBK): This variable name on both sides and split the objects out.
         -- Staff
         inst.skin_castsound = sounds.cast
@@ -1119,6 +1119,101 @@ wx78_scanner_item_init_fn = wx78_scanner_init_fn
 wx78_scanner_item_clear_fn = wx78_scanner_clear_fn
 wx78_scanner_succeeded_init_fn = wx78_scanner_init_fn
 wx78_scanner_succeeded_clear_fn = wx78_scanner_clear_fn
+
+wx78_drone_scout_init_fn = function(inst, build_name)
+	basic_init_fn(inst, build_name, "wx78_drone_scout")
+	if not TheWorld.ismastersim then
+		return
+	end
+	inst:OnDroneScoutSkinChanged(build_name)
+end
+
+wx78_drone_scout_clear_fn = function(inst)
+	basic_clear_fn(inst, "wx78_drone_scout")
+	inst:OnDroneScoutSkinChanged(nil)
+end
+
+wx78_drone_delivery_init_fn = function(inst, build_name)
+	inst.linked_skinname = build_name:gsub("wx78_dronedelivery", "wx78_dronedelivery_item")
+	if inst.components.placer == nil and not TheWorld.ismastersim then
+		return
+	end
+	inst.AnimState:SetSkin(build_name, "wx78_drone_delivery")
+end
+wx78_drone_delivery_clear_fn = function(inst)
+	inst.linked_skinname = nil
+	inst.AnimState:SetBuild("wx78_drone_delivery")
+end
+
+wx78_drone_delivery_item_init_fn = function(inst, build_name)
+	inst.linked_skinname = build_name
+	if not TheWorld.ismastersim then
+		return
+	end
+	inst.AnimState:SetSkin(build_name, "wx78_drone_delivery")
+	inst.components.inventoryitem:ChangeImageName(inst:GetSkinName())
+end
+wx78_drone_delivery_item_clear_fn = function(inst)
+	inst.linked_skinname = nil
+	inst.AnimState:SetBuild("wx78_drone_delivery")
+	inst.components.inventoryitem:ChangeImageName()
+end
+
+
+wx78_drone_delivery_small_init_fn = function(inst, build_name)
+	inst.linked_skinname = build_name:gsub("wx78_dronedeliverysmall", "wx78_dronedeliverysmall_item")
+	if inst.components.placer == nil and not TheWorld.ismastersim then
+		return
+	end
+	inst.AnimState:SetSkin(build_name, "wx78_drone_delivery_small")
+end
+wx78_drone_delivery_small_clear_fn = function(inst)
+	inst.linked_skinname = nil
+	inst.AnimState:SetBuild("wx78_drone_delivery_small")
+end
+
+
+wx78_drone_delivery_small_item_init_fn = function(inst, build_name)
+	inst.linked_skinname = build_name
+	if not TheWorld.ismastersim then
+		return
+	end
+	inst.AnimState:SetSkin(build_name, "wx78_drone_delivery_small")
+	inst.components.inventoryitem:ChangeImageName(inst:GetSkinName())
+end
+wx78_drone_delivery_small_item_clear_fn = function(inst)
+	inst.linked_skinname = nil
+	inst.AnimState:SetBuild("wx78_drone_delivery_small")
+	inst.components.inventoryitem:ChangeImageName()
+end
+
+
+wx78_drone_zap_init_fn = function(inst, build_name)
+	inst.linked_skinname = build_name
+	if not TheWorld.ismastersim then
+		return
+	end
+	inst.AnimState:SetSkin(build_name, "wx78_drone_zap")
+	if inst.OnDroneZapSkinChanged then
+		inst:OnDroneZapSkinChanged(build_name)
+	end
+end
+wx78_drone_zap_clear_fn = function(inst)
+	inst.linked_skinname = nil
+	inst.AnimState:SetBuild("wx78_drone_zap")
+	if inst.OnDroneZapSkinChanged then
+		inst:OnDroneZapSkinChanged(nil)
+	end
+end
+wx78_drone_zap_remote_init_fn = wx78_drone_zap_init_fn
+wx78_drone_zap_remote_clear_fn = wx78_drone_zap_clear_fn
+
+wx78_moduleremover_init_fn = function(inst, build_name)
+	basic_init_fn(inst, build_name, "wx78_moduleremover")
+end
+wx78_moduleremover_clear_fn = function(inst)
+	basic_clear_fn(inst, "wx78_moduleremover")
+end
 
 portableblender_init_fn = function(inst, build_name)
     inst.linked_skinname = build_name
@@ -2334,6 +2429,18 @@ function critter_puppy_clear_fn(inst)
     inst.AnimState:SetBuild("pupington_build")
 end
 function critter_puppy_builder_clear_fn(inst)
+    inst.linked_skinname = nil
+end
+
+function critter_bulbin_init_fn(inst, build_name)
+    basic_init_fn(inst, build_name, "bulbin_basic")
+end
+function critter_bulbin_clear_fn(inst)
+    -- No default build fallback.
+    inst.persists = false
+    inst:DoStaticTaskInTime(0, inst.Remove)
+end
+function critter_bulbin_builder_clear_fn(inst)
     inst.linked_skinname = nil
 end
 
@@ -3665,6 +3772,18 @@ function icehat_init_fn(inst, build_name)
 end
 function icehat_clear_fn(inst)
     basic_clear_fn(inst, "hat_ice")
+end
+function w_radio_init_fn(inst, build_name, skin_custom)
+    basic_init_fn(inst, build_name, "w_radio")
+    if inst.OnWRadioSkinChanged then
+    	inst:OnWRadioSkinChanged(build_name, skin_custom)
+    end
+end
+function w_radio_clear_fn(inst)
+	--basic_clear_fn(inst, "w_radio") --there isn't actually a default build
+	if inst.OnWRadioSkinChanged then
+		inst:OnWRadioSkinChanged(nil)
+	end
 end
 
 function pumpkinhat_init_fn(inst, build_name)
