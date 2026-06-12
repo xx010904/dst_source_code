@@ -449,6 +449,7 @@ STRINGS =
             HARVEST = "Harvest",
             RUMMAGE = "Rummage",
             SEARCH = "Search",
+            UNSOCKET = "Unsocket",
 		},
         REPAIR =
         {
@@ -582,6 +583,7 @@ STRINGS =
 			DEPLOY_TOSS = "Toss",
             FERTILIZE_GROUND = "Fertilize Plot",
             GRAVEPLANT = "Relocate",
+            HOT_ROCKS = "Scatter Rocks",
         },
 
 		PLAY =
@@ -646,6 +648,7 @@ STRINGS =
 			CARTOGRAPHY = "Draw at",
 			STUDY = "Study at",
 			FORGE = "Forge at",
+            OPERATE = "Operate",
 		},
 
         JUMPIN =
@@ -703,6 +706,7 @@ STRINGS =
 			--verbs
 			GESTALT_POSSESS = "Transfer Gestalt",
             CONSUME = "Consume",
+            TIE_ONTO = "Tie Onto",
             -- prefabs
             BEEF_BELL = "Bond",
             KITCOON_NAMETAG = "Name",
@@ -710,6 +714,7 @@ STRINGS =
 			SLINGSHOTMODKIT = "Mod",
 			WAGDRONE_PARTS = "Repair",
 			GEARS = "Repair",
+			SECURITY_PULSE_CAGE_FULL = "Transfer",
         },
         STOPUSINGITEM =
         {
@@ -1186,6 +1191,15 @@ STRINGS =
         },
 
         EQUIPONBODY = "Equip on",
+
+        -- Rifts 7
+        CLIMB =
+        {
+            GENERIC = "Climb Up",
+            HAUNT = "Haunt",
+        },
+        STARTVAULTORBTELEPORT = "Focus On",
+        VAULTORBTELEPORT_MAP = "Portate",
     },
 
 	WOBY_COMMANDS =
@@ -1234,6 +1248,14 @@ STRINGS =
         DESICCANT = "Damp",
         DESICCANT_FULL = "Saturated",
         WX78_FOODBRICK = "Moistened",
+    },
+
+    TEMPERATURE_PREFIX =
+    {
+        TRAP_FUMAROLE =
+        {
+            HOT = "Hot",
+        },
     },
 
     NAMES =
@@ -2335,6 +2357,7 @@ STRINGS =
         CRITTER_GLOMLING = "Glomglom",
 		CRITTER_LUNARMOTHLING = "Mothling",
         CRITTER_BULBIN = "Bulbin",
+        CRITTER_EETS = "Eets",
 
         CRITTER_LAMB_BUILDER = "Ewelet",
         CRITTER_PUPPY_BUILDER = "Vargling",
@@ -2344,6 +2367,7 @@ STRINGS =
         CRITTER_GLOMLING_BUILDER = "Glomglom",
 		CRITTER_LUNARMOTHLING_BUILDER = "Mothling",
         CRITTER_BULBIN_BUILDER = "Bulbin",
+        CRITTER_EETS_BUILDER = "Eets",
 
         BEARGERVEST = "Hibearnation Vest",
         ARMORDRAGONFLY = "Scalemail",
@@ -2490,6 +2514,7 @@ STRINGS =
         CHESSPIECE_WAGBOSS_ROBOT = "W.A.R.B.O.T. Figure",
         CHESSPIECE_WAGBOSS_LUNAR = "Celestial Scion Figure",
         CHESSPIECE_YOTH = "Gilded Knight Figure",
+        CHESSPIECE_VAULT_PILLAR_GUARD = "Ancient Guard Tower Figure",
 
         CHESSPIECE_PAWN_BUILDER = "Pawn Figure",
         CHESSPIECE_ROOK_BUILDER = "Rook Figure",
@@ -2535,7 +2560,8 @@ STRINGS =
         CHESSPIECE_YOTS_BUILDER = "Gilded Depths Worm Figure",
         CHESSPIECE_WAGBOSS_ROBOT_BUILDER = "W.A.R.B.O.T. Figure",
         CHESSPIECE_WAGBOSS_LUNAR_BUILDER = "Celestial Scion Figure",
-        CHESSPIECE_YOTH_BUILDER = "Gilded Knight's Figure",
+        CHESSPIECE_YOTH_BUILDER = "Gilded Knight Figure",
+        CHESSPIECE_VAULT_PILLAR_GUARD_BUILDER = "Ancient Guard Tower Figure",
 
         CHESSPIECE_BUTTERFLY_SKETCH = "Moon Moth Figure Sketch",
         CHESSPIECE_ANCHOR_SKETCH = "Anchor Figure Sketch",
@@ -2559,6 +2585,7 @@ STRINGS =
         CHESSPIECE_WAGBOSS_ROBOT_SKETCH = "W.A.R.B.O.T. Figure Sketch",
         CHESSPIECE_WAGBOSS_LUNAR_SKETCH = "Celestial Scion Figure Sketch",
         CHESSPIECE_YOTH_SKETCH = "Gilded Knight Figure Sketch",
+        CHESSPIECE_VAULT_PILLAR_GUARD_SKETCH = "Ancient Guard Tower Figure Sketch",
 
         SHADOW_ROOK = "Shadow Rook",
         SHADOW_KNIGHT = "Shadow Knight",
@@ -4596,6 +4623,47 @@ STRINGS =
         SHADOW_HEART_VEIN = "Shadow Atrium Tendril",
         WX78_SHADOWDRONE_DEBUFFER = "Exploiterator",
         WX78_SHADOWDRONE_HARVESTER = "Auto-Grabber",
+
+        -- Rifts 7
+        STALKER_NPC = "Ancient Fuelweaver",
+
+        MITEGLAND = "Heat Gland",
+        MITEGLAND_COOKED = "Cooked Heat Gland",
+
+        FUMAROLEAXE = "Ardent Axe",
+        FUMAROLEPICKAXE = "Pyretic Pickaxe",
+        FUMAROLESHOVEL = "Searing Shovel",
+        FUMAROLEHAMMER = "Hotheaded Hammer",
+        FUMAROLE_FARM_HOE = "Heated Garden Hoe",
+
+        TRAP_FUMAROLE = "Coals",
+
+        HEALINGSALVE_FUMAROLE = "Thermal Balm",
+
+		VAULT_PILLAR_GUARD = "Ancient Guard Tower",
+        VAULT_PILLAR_GUARD_CRAFTED = "Guard Tower",
+		VAULT_PILLAR_GUARD_DORMANT = "Ancient Tower",
+		VAULT_PILLAR_GUARD_CONSTR = "Guard Tower Site",
+		VAULT_PILLAR_GUARD_CONSTR_PLANS = "Guard Tower Kit",
+		VAULT_CRAWLER = "Lustrous Weevil", --NOTE: "Sanctum Lustre" is the name of the lights
+        VAULT_CRAWLER_SOCKET = "Lustrous Socket", -- FOR SCRAPBOOK.
+
+        VAULT_DECON_DOOR = "Inner Sanctum Barrier",
+        VAULT_DECON_MISTER = "Sanctum Purifier",
+		VAULT_KEY_ACTIVATOR = "Pulse Cradle",
+		VAULT_CRAWLER_LEVER = "Lever",
+        VAULT_KEY = "Keystone",
+        VAULT_KEY_PEDESTAL = "Reliquary",
+        VAULT_ORB_REFINED = "Portation Orb Fragment",
+        VAULT_COMPASS = "Waymark Compass",
+		VAULT_PILLAR_GUARD_PIECE_1 = "Guard Tower Core",
+		VAULT_PILLAR_GUARD_PIECE_2 = "Spark Socket",
+		VAULT_PILLAR_GUARD_PIECE_3 = "Cranky Articulator",
+
+        VAULT_REFINER_PEDESTAL = "Sanctum Smithy",
+
+        CEILING_ROPE = "Rope",
+        VAULT_KEY_EXIT = "Chasm",
 	},
 
     NAME_DETAIL_EXTENTION =
@@ -5042,6 +5110,7 @@ STRINGS =
         CHESSPIECE_WAGBOSS_ROBOT_BUILDER = "The automation.",
         CHESSPIECE_WAGBOSS_LUNAR_BUILDER = "The abomination.",
         CHESSPIECE_YOTH_BUILDER = "Shining armor included.",
+        CHESSPIECE_VAULT_PILLAR_GUARD_BUILDER = "Imposing presence not included.",
 
         CHESSPIECE_BUTTERFLY_SKETCH = "A sculpture sketch of a Moon Moth.",
         CHESSPIECE_ANCHOR_SKETCH = "A sculpture sketch of an anchor.",
@@ -5065,6 +5134,7 @@ STRINGS =
         CRITTER_LAMB_BUILDER = "Befriend a fluffy Ewelet.",
 		CRITTER_LUNARMOTHLING_BUILDER = "Befriend a delicate Mothling.",
 		CRITTER_BULBIN_BUILDER = "Befriend a rolling Bulbin.",
+		CRITTER_EETS_BUILDER = "Befriend a hungry Eets.\nIt's emotional.",
 
         CANDYBAG = "Only carries Hallowed Nights goodies.",
 
@@ -5820,6 +5890,21 @@ STRINGS =
 
         WX78_SHADOWDRONE_DEBUFFER = "Know your enemy... then destroy them!",
         WX78_SHADOWDRONE_HARVESTER = "It's all up for grabs.",
+
+        -- Rifts 7
+
+        FUMAROLEAXE = "Chop in cozy comfort.",
+        FUMAROLEPICKAXE = "It's the hottest thing in mining.",
+        FUMAROLESHOVEL = "A superheated shovel, ya dig?",
+        FUMAROLEHAMMER = "Beat with heat.",
+        FUMAROLE_FARM_HOE = "Stay warm while you farm.",
+
+        TRAP_FUMAROLE = "Rake your enemies over the coals.",
+
+        HEALINGSALVE_FUMAROLE = "Smear on some heat protection.",
+
+		VAULT_ORB_REFINED = "It pleases when broken into pieces.",
+		VAULT_PILLAR_GUARD_CONSTR_PLANS = "Something big is coming up!",
     },
 
     -- MAXWELL_TEST = {"Say pal, you don't look so good.", "You better find something to eat before night comes!"},
@@ -8807,6 +8892,7 @@ STRINGS.UI =
         NEEDSCARTOGRAPHYDESK = "Use a Cartographer's Desk to write this.",
         NEEDSROBOTSHADOWFUEL = "Implant a dark fuel to unlock this recipe.",
         NEEDSROBOTSHADOWHEART = "Implant a dark heart to unlock this recipe.",
+        NEEDSVAULT_REFINER_PEDESTAL = "Find an ancient smithy to craft this at.",
 
 		NEEDSYOTG = "Available during Year of the Gobbler!",
 		NEEDSYOTV = "Available during Year of the Varg!",
@@ -8841,6 +8927,7 @@ STRINGS.UI =
 
         CANTRESEARCH = "Some things must be discovered on your own.",
         LIMITEDAMOUNTFMT = "{name} ({number} available)",
+        NUMTOGIVEFMT = "{name} (x{number})",
         DEFAULT = "Classic",
     },
 
@@ -9465,7 +9552,7 @@ STRINGS.UI =
         CANT_LOAD_ROG = "Reign of Giants is not installed. Unable to load.",
 
 		MAINBANNER_ROT_BETA_TITLE = "Beta Build", --unused now.
-		MAINBANNER_BETA_TITLE = "Skill Spotlight - WX-78 - Beta Branch", --"Winter's Feast - Beta Branch", -- "Title/nBeta Branch"
+		MAINBANNER_BETA_TITLE = "Beta Branch", --"Winter's Feast - Beta Branch", -- "Title/nBeta Branch"
 
         CONSOLE_EDITION_TEXT = "Console Edition",
 
@@ -10034,6 +10121,7 @@ STRINGS.UI =
         WAGPUNK_WORKSTATION = "Fabrication",
         CARPENTRY = "Carpentry",
         HERMITCRAB_TEASHOP = "Tea Brewing",
+        VAULT_REFINER_PEDESTAL = "Sanctum Smithy",
 
         SHADOW = "Codex Umbra",
         FOODPROCESSING = "Seasonings",
@@ -11848,7 +11936,8 @@ STRINGS.UI =
                     CRABBY_HERMIT_HAPPY = "The Crabby Hermit gave a shiny gift.",
                     LUNAR_RIFTS_ACTIVE = "Lunar Rifts are forming in the Constant.",
                     -- Caves.
-                    ATRIUM_KEY_FOUND = "The Atrium Key is found.",
+                    ATRIUM_KEY_FOUND = "The Ancient Key is found.",
+                    VAULT_KEY_FOUND = "The Keystone is found.",
                     --  FIXME(JBK): It would be nice for a CELESTIALPORTAL thing here for caves.
                     ARCHIVES_ENERGIZED = "The Ancient Archives are energized.",
                     SHADOW_RIFTS_ACTIVE = "Shadow Rifts are forming in the Constant.",
@@ -11860,7 +11949,8 @@ STRINGS.UI =
                     CRABBY_HERMIT_HAPPY = "The Crabby Hermit has yet to give her shiny gift.",
                     LUNAR_RIFTS_ACTIVE = "Lunar Rifts are no where to be found.",
                     -- Caves.
-                    ATRIUM_KEY_FOUND = "The Atrium Key has yet to be obtained.",
+                    ATRIUM_KEY_FOUND = "The Ancient Key has yet to be obtained.",
+                    VAULT_KEY_FOUND = "The Keystone has yet to be obtained.",
                     --  FIXME(JBK): It would be nice for a CELESTIALPORTAL thing here for caves.
                     ARCHIVES_ENERGIZED = "The Ancient Archives are powered down.",
                     SHADOW_RIFTS_ACTIVE = "Shadow Rifts are no where to be found.",
@@ -11872,7 +11962,8 @@ STRINGS.UI =
                     CRABBY_HERMIT_HAPPY = "The Crabby Hermit may have given a shiny gift.",
                     LUNAR_RIFTS_ACTIVE = "Lunar Rifts may be forming in the Constant.",
                     -- Caves.
-                    ATRIUM_KEY_FOUND = "The Atrium Key may have been found.",
+                    ATRIUM_KEY_FOUND = "The Ancient Key may have been found.",
+                    VAULT_KEY_FOUND = "The Keystone may have been found.",
                     --  FIXME(JBK): It would be nice for a CELESTIALPORTAL thing here for caves.
                     ARCHIVES_ENERGIZED = "The Ancient Archives may be energized.",
                     SHADOW_RIFTS_ACTIVE = "Shadow Rifts may be forming in the Constant.",
@@ -13322,6 +13413,33 @@ STRINGS.UI =
         MYSTERYBOX_DISABLE = "You must be logged in to access the Treasury.",
 
         NOT_AVAILABLE_OFFLINE = "This feature is not available in offline mode."
+    },
+
+    UNRAVELDUPESSCREEN =
+    {
+        TITLE = "Select Duplicate Items To Unravel",
+        SELECTED = "Selected",
+        UNRAVEL = "Unravel",
+        CANCEL = "Cancel",
+    },
+
+    BARTER_QUEUE =
+    {
+        TOOLTIP_UNRAVEL = "Unravel all duplicate items",
+        TOOLTIP_UNRAVEL_DISABLED = "No duplicate items to unravel",
+        TOOLTIP_CANCEL = "Stop unraveling duplicate items",
+
+        UNRAVEL_DUPES_TITLE = "Unravel Duplicate Skins?",
+        UNRAVEL_DUPES_BODY = "Unravel {count} duplicates into {doodad_count} Spools?\n\nYou will have a total of {doodad_net} Spools.",
+        UNRAVEL_DUPES_YES = "Unravel!",
+        UNRAVEL_DUPES_NO = "Never mind",
+
+        UNRAVEL_ERROR_TITLE = "Unexpected Error",
+        UNRAVEL_ERROR_BODY = "Something went wrong, please try again later",
+
+        UNRAVEL_COMMAND = "Unraveling {skin_name}",
+
+        CANCEL = "Stopping...",
     },
 
     BEARDSCREEN =
@@ -15329,6 +15447,14 @@ STRINGS.UI =
 	{
 		ATTACK = "Shoot",
 	},
+
+    GIVE_KEY_STONE =
+    {
+        TITLE  = "The Way Ahead",
+        BODY   = "The Shadow Queen is pleased with your progress. She will begin the final preparations, and call upon you when the time is right. Be ready.\nP.S. For now, this will only reset the Sanctum. Continue?",
+        OK     = "Ok",
+        CANCEL = "Let me think about it.",
+    },
 }
 
 --these are broken out into their own files for ease of editing
@@ -17810,6 +17936,7 @@ STRINGS.SCRAPBOOK = {
         SLINGSHOTPART = "Slingshot Part",
         GESTALT = "Gestalt",
         DRONE = "Drone",
+        TRAP = "Trap",
     },
 
     SANITYDESC ={
@@ -18091,7 +18218,7 @@ STRINGS.SCRAPBOOK = {
         STRAWROLL = "Sleeping in it restores 0.66 Sanity and 0.5 health per second, costing 1 Hunger per second.",
         FURROLL = "Sleeping in it restores 1 Sanity and 1 health per second, costing 1 Hunger per second. It also warms the user overtime.",
         HALLOWEENPOTIONFIRE = "Creates pretty sparkles when added to a fire.",
-        SOILAMENDER = "Adds 8-32 Growth Formula nutrient to the ground depending in its fermentation level.\n\nWill also trigger Wormwoods bloom for 1 to 4 minutes depending on fermentation level.",
+        SOILAMENDER = "Adds 8-32 Growth Formula nutrient to the ground depending on its fermentation level.\n\nWill also trigger Wormwoods bloom for 1 to 4 minutes depending on fermentation level.",
         SUSPICIOUSMARBLE = "A piece of broken marble sculpture.",
         REVIVER = "Gives the user 80 Sanity when given to a survivor's ghost.\n\nThe ghost will revive with a 25% max health penalty which can be recovered with a Booster Shot.",
         TERRARIUM = "I sure hope no one opens it, or worse, corrupts it.",
@@ -18106,29 +18233,29 @@ STRINGS.SCRAPBOOK = {
         SEWINGTAPE = "Used to add 5 days of durability on an item that can be sewn. Can also plug a leak on a boat.",
         TURF = "Can be placed on dirt ground to change the type of ground.",
         VOIDCLOTHUMBRELLA = "While on the ground, it can be activated to create a barrier that protects survivors from rain and rain like effects.",
-        WX78MODULE_MAXHEALTH = "Plugs into WX-78's Alpha circuit board. Crafting recipe is scanned from a Spider.\n\nRequires 1 socket and raises Maximum Health +40.\n\nAlpha Circuit Tinkering II boosts this circuit to provide 2.5% armor",
-        WX78MODULE_MAXSANITY1 = "Plugs into WX-78's Alpha circuit board. Crafting recipe is scanned from a Butterfly, or Moon Moth.\n\nRequires 1 socket and raises Maximum Sanity +40.\n\nAlpha Circuit Tinkering I boosts this circuit to have a 80% modifier to negative sanity auras.\n\nAlpha Circuit Tinkering II boosts this circuit to increase the sanity gain of clothing items by 10%.",
-        WX78MODULE_MAXSANITY = "Plugs into WX-78's Alpha circuit board. Crafting recipe is scanned from Shadow Creatures.\n\nRequires 2 sockets and raises Maximum Sanity +100.\n\nAlpha Circuit Tinkering I boosts this circuit to have a 50% modifier to negative sanity auras.\n\nAlpha Circuit Tinkering II boosts this circuit to increase the sanity gain of clothing items by 30%.",
-        WX78MODULE_MOVESPEED = "Plugs into WX-78's Beta circuit board. Crafting recipe is scanned from a Rabbit.\n\nRequires 6 sockets and raises movement speed by 25%.\n\nBeta Circuit Tinkering II boosts this circuit to reduce slowness effects by 25%.",
-        WX78MODULE_MOVESPEED2 = "Plugs into WX-78's Beta circuit board. Crafting recipe is scanned from a Rook, or the Ancient Guardian.\n\nRequires 2 sockets.\nThe first raises movement speed by 25%.\nThe second raises movement speed by 15%.\nThe third raises movement speed by 10%.\nThe maximum speed boost can be 50%.\n\nBeta Circuit Tinkering II boosts this circuit to reduce slowness effects by 25%.",
-        WX78MODULE_HEAT = "Plugs into WX-78's Beta circuit board. Crafting recipe is scanned from a Fire Hound, Geothermite, or Dragonfly.\n\nRequires 3 sockets and raises body temperature 20 degrees, increases spoil rate of inventory by 25% and increases drying rate by 10%. Will also warm nearby survivors.\n\nBeta Circuit Tinkering I boosts this circuit to provide freezing resistance, and grants full immunity to freezing when two are plugged.",
-        WX78MODULE_NIGHTVISION = "Plugs into WX-78's Beta circuit board. Crafting recipe is scanned from a Moleworm.\n\nRequires 4 sockets and lets the user see in the dark. Turns on at night and when entering the Caves.\n\nBeta Circuit Tinkering I boosts this circuit to not have mole vision any longer.",
-        WX78MODULE_COLD = "Plugs into WX-78's Beta circuit board. Crafting recipe is scanned from an Ice Hound, or Deerclops.\n\nRequires 3 sockets and lowers body temperature 20 degrees and decreases spoil rate of inventory by 25%. Will also cool nearby survivors.\n\nIf WX-78's wetness reaches 95%, it will drop to 0% and 2 Ice will be spawned.\n\nBeta Circuit Tinkering I boosts this circuit to provide 50% fire damage resistance.",
-        WX78MODULE_TASER = "Plugs into WX-78's Beta circuit board. Crafting recipe is scanned from a Volt Goat.\n\nRequires 2 sockets and deals 20 electrical damage to WX-78's attackers.\n\nThis module also makes WX-78 immune to electrical shock.\n\nBeta Circuit Tinkering II boosts this circuit to allow WX-78 to get overloaded when being hit, culminating in a 50 electrical damage AoE blast when hit enough times.",
-        WX78MODULE_LIGHT = "Plugs into WX-78's Beta circuit board. Crafting recipe is scanned from Fireflies.\n\nRequires 3 sockets and creates light.\n\nBeta Circuit Tinkering II boosts this circuit to provide a directional cone of light facing WX-78's direction.",
-        WX78MODULE_LIGHT2 = "Plugs into WX-78's Beta circuit board. Crafting recipe is scanned from a Depth Worm, Bulbous Lightbug, or Skittersquid.\n\nRequires 1 socket and creates light.\n\nBeta Circuit Tinkering II boosts this circuit to provide a directional cone of light facing WX-78's direction.",
-        WX78MODULE_MAXHUNGER = "Plugs into WX-78's Alpha circuit board. Crafting recipe is scanned from a Slurper, or Bearger.\n\nRequires 2 sockets, increases Maximum Hunger by 100 points and reduces Hunger drain by 20%.\n\nAlpha Circuit Tinkering I boosts the Hunger drain reduction to 25%.\n\nAlpha Circuit Tinkering II boosts the Hunger drain reduction to 30%.",
-        WX78MODULE_MAXHUNGER1 = "Plugs into WX-78's Alpha circuit board. Crafting recipe is scanned from a regular Hound.\n\nRequires 1 socket and increases Maximum Hunger by 40 points.\n\nAlpha Circuit Tinkering I boosts this circuit to reduce Hunger drain by 5%.\n\nAlpha Circuit Tinkering II boosts the Hunger drain reduction to 10%",
-        WX78MODULE_MUSIC = "Plugs into WX-78's Beta circuit board. Crafting recipe is scanned from Crabby Hermit, or the Crab King.\n\nRequires 3 sockets, raises Sanity of nearby survivors 5 points a minute and raises garden plant happiness from the music.\n\nBeta Circuit Tinkering I boosts this circuit to recruit Pig Men and Bunny Men who hear the song.",
-        WX78MODULE_BEE = "Plugs into WX-78's Alpha circuit board. Crafting recipe is scanned from the Bee Queen.\n\nRequires 3 sockets, heals 5 Health every 30 seconds, gains 2 Sanity every minute and increases Maximum Sanity by 100 points.\n\nAlpha Circuit Tinkering I boosts this circuit to have a 50% modifier to negative sanity auras.\n\nAlpha Circuit Tinkering II boosts this circuit to increase the sanity gain of clothing items by 30%, and provides a regenerating shield when WX-78 is at full health. The shield protects an attack from damaging its health if WX-78 has over 15 shield.",
-        WX78MODULE_MAXHEALTH2 = "Plugs into WX-78's Alpha circuit board. Crafting recipe is scanned from a Nurse Spider\n\nRequires 2 sockets and increases Maximum Health by 100 points.\n\nAlpha Circuit Tinkering II boosts this circuit to provide 5% armor",
-        WX78MODULE_RADAR = "Plugs into WX-78's Beta circuit board. Crafting recipe is scanned from a Crow, Redbird, Snowbird, Puffin or Canary.\n\nRequires 1 socket and increases WX-78's Vision Range.\n\nBeta Circuit Tinkering I boosts this circuit to increase the range of the Roto-Mapper, Zaptrocuter, Bio Scanalyzer scan area, and W.A.R.B.I.S. target locking.",
+        WX78MODULE_MAXHEALTH = "Plugs into WX-78's Alpha circuit board. Crafting recipe is scanned from a Spider.\n\nRequires 1 socket and raises Maximum Health +40.\n\nAlpha Circuits Tinkering II boosts this circuit to provide 2.5% armor.",
+        WX78MODULE_MAXSANITY1 = "Plugs into WX-78's Alpha circuit board. Crafting recipe is scanned from a Butterfly, or Moon Moth.\n\nRequires 1 socket and raises Maximum Sanity +40.\n\nAlpha Circuits Tinkering I boosts this circuit to have a 80% modifier to negative sanity auras.\n\nAlpha Circuits Tinkering II boosts this circuit to increase the sanity gain of clothing items by 10%.",
+        WX78MODULE_MAXSANITY = "Plugs into WX-78's Alpha circuit board. Crafting recipe is scanned from Shadow Creatures.\n\nRequires 2 sockets and raises Maximum Sanity +100.\n\nAlpha Circuits Tinkering I boosts this circuit to have a 50% modifier to negative sanity auras.\n\nAlpha Circuits Tinkering II boosts this circuit to increase the sanity gain of clothing items by 30%.",
+        WX78MODULE_MOVESPEED = "Plugs into WX-78's Beta circuit board. Crafting recipe is scanned from a Rabbit.\n\nRequires 6 sockets and raises movement speed by 25%.\n\nBeta Circuits Tinkering II boosts this circuit to reduce slowness effects by 25%.",
+        WX78MODULE_MOVESPEED2 = "Plugs into WX-78's Beta circuit board. Crafting recipe is scanned from a Rook, or the Ancient Guardian.\n\nRequires 2 sockets.\nThe first raises movement speed by 25%.\nThe second raises movement speed by 15%.\nThe third raises movement speed by 10%.\nThe maximum speed boost can be 50%.\n\nBeta Circuits Tinkering II boosts this circuit to reduce slowness effects by 25%.",
+        WX78MODULE_HEAT = "Plugs into WX-78's Beta circuit board. Crafting recipe is scanned from a Fire Hound, Geothermite, or Dragonfly.\n\nRequires 3 sockets and raises body temperature 20 degrees, increases spoil rate of inventory by 25% and increases drying rate by 10%. Will also warm nearby survivors.\n\nBeta Circuits Tinkering I boosts this circuit to provide freezing resistance, and grants full immunity to freezing when two are plugged.",
+        WX78MODULE_NIGHTVISION = "Plugs into WX-78's Beta circuit board. Crafting recipe is scanned from a Moleworm.\n\nRequires 4 sockets and lets the user see in the dark. Turns on at night and when entering the Caves.\n\nBeta Circuits Tinkering I boosts this circuit to not have mole vision any longer.",
+        WX78MODULE_COLD = "Plugs into WX-78's Beta circuit board. Crafting recipe is scanned from an Ice Hound, or Deerclops.\n\nRequires 3 sockets and lowers body temperature 20 degrees and decreases spoil rate of inventory by 25%. Will also cool nearby survivors.\n\nIf WX-78's wetness reaches 95%, it will drop to 0% and 2 Ice will be spawned.\n\nBeta Circuits Tinkering I boosts this circuit to provide 50% fire damage resistance.",
+        WX78MODULE_TASER = "Plugs into WX-78's Beta circuit board. Crafting recipe is scanned from a Volt Goat.\n\nRequires 2 sockets and deals 20 electrical damage to WX-78's attackers.\n\nThis module also makes WX-78 immune to electrical shock.\n\nBeta Circuits Tinkering II boosts this circuit to allow WX-78 to get overloaded when being hit, culminating in a 50 electrical damage AoE blast when hit enough times.",
+        WX78MODULE_LIGHT = "Plugs into WX-78's Beta circuit board. Crafting recipe is scanned from Fireflies.\n\nRequires 3 sockets and creates light.\n\nBeta Circuits Tinkering II boosts this circuit to provide a directional cone of light facing WX-78's direction.",
+        WX78MODULE_LIGHT2 = "Plugs into WX-78's Beta circuit board. Crafting recipe is scanned from a Depth Worm, Bulbous Lightbug, or Skittersquid.\n\nRequires 1 socket and creates light.\n\nBeta Circuits Tinkering II boosts this circuit to provide a directional cone of light facing WX-78's direction.",
+        WX78MODULE_MAXHUNGER = "Plugs into WX-78's Alpha circuit board. Crafting recipe is scanned from a Slurper, or Bearger.\n\nRequires 2 sockets, increases Maximum Hunger by 100 points and reduces Hunger drain by 20%.\n\nAlpha Circuits Tinkering I boosts the Hunger drain reduction to 25%.\n\nAlpha Circuits Tinkering II boosts the Hunger drain reduction to 30%.",
+        WX78MODULE_MAXHUNGER1 = "Plugs into WX-78's Alpha circuit board. Crafting recipe is scanned from a regular Hound.\n\nRequires 1 socket and increases Maximum Hunger by 40 points.\n\nAlpha Circuits Tinkering I boosts this circuit to reduce Hunger drain by 5%.\n\nAlpha Circuits Tinkering II boosts the Hunger drain reduction to 10%",
+        WX78MODULE_MUSIC = "Plugs into WX-78's Beta circuit board. Crafting recipe is scanned from Crabby Hermit, or the Crab King.\n\nRequires 3 sockets, raises Sanity of nearby survivors 5 points a minute and raises garden plant happiness from the music.\n\nBeta Circuits Tinkering I boosts this circuit to recruit Pig Men and Bunny Men who hear the song.",
+        WX78MODULE_BEE = "Plugs into WX-78's Alpha circuit board. Crafting recipe is scanned from the Bee Queen.\n\nRequires 3 sockets, heals 5 Health every 30 seconds, gains 2 Sanity every minute and increases Maximum Sanity by 100 points.\n\nAlpha Circuits Tinkering I boosts this circuit to have a 50% modifier to negative sanity auras.\n\nAlpha Circuits Tinkering II boosts this circuit to increase the sanity gain of clothing items by 30%, and provides a regenerating shield when WX-78 is at full health. The shield protects an attack from damaging its health if WX-78 has over 15 shield.",
+        WX78MODULE_MAXHEALTH2 = "Plugs into WX-78's Alpha circuit board. Crafting recipe is scanned from a Nurse Spider\n\nRequires 2 sockets and increases Maximum Health by 100 points.\n\nAlpha Circuits Tinkering II boosts this circuit to provide 5% armor.",
+        WX78MODULE_RADAR = "Plugs into WX-78's Beta circuit board. Crafting recipe is scanned from a Crow, Redbird, Snowbird, Puffin or Canary.\n\nRequires 1 socket and increases WX-78's Vision Range.\n\nBeta Circuits Tinkering I boosts this circuit to increase the range of the Roto-Mapper, Zaptrocuter, Bio Scanalyzer scan area, and W.A.R.B.I.S. target locking.",
         WX78MODULE_STACKSIZE = "Plugs into WX-78's Beta circuit board. Crafting recipe is scanned from Krampus.\n\nRequires 1 socket and places a infinite stack-size 1 slot container in WX-78's right-most inventory slot.",
-        WX78MODULE_SCREECH = "Plugs into WX-78's Gamma circuit board. Crafting recipe is scanned from a Naked Mole Bat.\n\nRequires 3 sockets and allows WX-78 to perform a sonic attack, inducing panic on nearby creatures, and going off cooldown for 20 seconds.\n\nGamma Circuit Tinkering I allows WX-78 to hold the sonic attack.",
-        WX78MODULE_DIGESTION = "Plugs into WX-78's Gamma circuit board. Crafting recipe is scanned from a Catcoon.\n\nRequires 2 sockets and allows WX-78 to process spoiled foods, such as Rot, to bake Nutribricks.\n\nGamma Circuit Tinkering I allows WX-78 to also process nearly spoiled foods to bake Nutribricks.",
-        WX78MODULE_SHIELDING = "Plugs into WX-78's Gamma circuit board. Crafting recipe is scanned from a Rock Lobster, Slurtle, or Snurtle.\n\nRequires 4 sockets and allows WX-78 to perform a block, providing 80% armor, going off cooldown for 20 seconds.\n\nGamma Circuit Tinkering II provides WX-78 with knockback immunity in the block.",
-        WX78MODULE_SPIN = "Plugs into WX-78's Gamma circuit board. Crafting recipe is scanned from a Mosling.\n\nRequires 3 sockets and allows WX-78 to perform a spin when using any Axe or Pickaxe when working or attacking.\n\nGamma Circuit Tinkering II makes WX-78 spin faster.",
-        WX78MODULE_CHESS = "Plugs into WX-78's Gamma circuit board. Crafting recipe is scanned from a Knight.\n\nRequires 1 socket and allows WX-78 to have 1 additional Clockwork follower. Interacting with Clockworks no longer requires them to be stunned.\n\nGamma Circuit Tinkering I allows WX-78 to approach Clockworks without drawing aggro.",
+        WX78MODULE_SCREECH = "Plugs into WX-78's Gamma circuit board. Crafting recipe is scanned from a Naked Mole Bat.\n\nRequires 3 sockets and allows WX-78 to perform a sonic attack, inducing panic on nearby creatures, and going off cooldown for 20 seconds.\n\nGamma Circuits Tinkering I allows WX-78 to hold the sonic attack.",
+        WX78MODULE_DIGESTION = "Plugs into WX-78's Gamma circuit board. Crafting recipe is scanned from a Catcoon.\n\nRequires 2 sockets and allows WX-78 to process spoiled foods, such as Rot, to bake Nutribricks.\n\nGamma Circuits Tinkering I allows WX-78 to also process nearly spoiled foods to bake Nutribricks.",
+        WX78MODULE_SHIELDING = "Plugs into WX-78's Gamma circuit board. Crafting recipe is scanned from a Rock Lobster, Slurtle, or Snurtle.\n\nRequires 4 sockets and allows WX-78 to perform a block, providing 80% armor, going off cooldown for 20 seconds.\n\nGamma Circuits Tinkering II provides WX-78 with knockback immunity in the block.",
+        WX78MODULE_SPIN = "Plugs into WX-78's Gamma circuit board. Crafting recipe is scanned from a Mosling.\n\nRequires 3 sockets and allows WX-78 to perform a spin when using any Axe or Pickaxe when working or attacking.\n\nGamma Circuits Tinkering II makes WX-78 spin faster.",
+        WX78MODULE_CHESS = "Plugs into WX-78's Gamma circuit board. Crafting recipe is scanned from a Knight.\n\nRequires 1 socket and allows WX-78 to have 1 additional Clockwork follower. Interacting with Clockworks no longer requires them to be stunned.\n\nGamma Circuits Tinkering I allows WX-78 to approach Clockworks without drawing aggro.",
         WX78_FOODBRICK = "Produced by WX-78 with the Redigestion Circuit.\n\nCan be moistened to make edible, or used as fertilizer.",
         WAGSTAFF_TOOL = "An item used by a mysterious character to restrain static.",
         BATBAT = "Each attack drains 6.8 Health from living targets.\n\nIf the user is not at full health, it also drains 3.4 Sanity.",
@@ -18518,6 +18645,27 @@ STRINGS.SCRAPBOOK = {
         WX78_BACKUPBODY = "A backup chassis for WX-78 to store items, circuits. WX-78 can transfer their consciousness into the chassis.",
 
         WX78_GESTALTTRAPPER = "Install on a Backup Chassis to lure a gestalt over and possess it, for your very own spectrobotic minion!",
+
+        -- Rifts 7
+
+        FUMAROLEAXE = "Gains heat when near something hot, and cools near something cold.\n\nIt will warm the holder depending on its temperature.\n\nWhen hot, it chops a bit more efficiently, and does extra damage towards freezing targets.\n\nDurability is used when breaking from cooling down fully, it can be mended back into a functional state by heating it back up again.",
+        FUMAROLEPICKAXE = "Gains heat when near something hot, and cools near something cold.\n\nIt will warm the holder depending on its temperature.\n\nWhen hot, it mines a bit more efficiently, and does extra damage towards freezing targets.\n\nDurability is used when breaking from cooling down fully, it can be mended back into a functional state by heating it back up again.",
+        FUMAROLEHAMMER = "Gains heat when near something hot, and cools near something cold.\n\nIt will warm the holder depending on its temperature.\n\nWhen hot, it hammers a bit more efficiently, and does extra damage towards freezing targets.\n\nDurability is used when breaking from cooling down fully, it can be mended back into a functional state by heating it back up again.",
+        FUMAROLESHOVEL = "Gains heat when near something hot, and cools near something cold.\n\nIt will warm the holder depending on its temperature.\n\nWhen hot, it does extra damage towards freezing targets.\n\nDurability is used when breaking from cooling down fully, it can be mended back into a functional state by heating it back up again.",
+        FUMAROLE_FARM_HOE = "Gains heat when near something hot, and cools near something cold.\n\nIt will warm the holder depending on its temperature.\n\nWhen hot, it does extra damage towards freezing targets.\n\nDurability is used when breaking from cooling down fully, it can be mended back into a functional state by heating it back up again.",
+
+        TRAP_FUMAROLE = "Scatter these on the floor and heat them up for a hot trap that deals fire damage, and also cooks food.",
+        HEALINGSALVE_FUMAROLE = "Provides a bit of protection against overheating, and fire immunity for a duration of 4 minutes.",
+
+        VAULT_DECON_MISTER = "Cleanses the rotten nightmares right out of you. What's so important here it must be kept away from the shadows?",
+        VAULT_DECON_DOOR = "Keeps the nightmares out.",
+        VAULT_CRAWLER_SOCKET = "It looks like an orb could fit right in.",
+        VAULT_KEY_ACTIVATOR = "A spark of energy could revitalize it.",
+        VAULT_CRAWLER_LEVER = "The urge to pull this lever is... even stronger this time.",
+        VAULT_ORB_REFINED = "A refined piece of a Portation Orb. It can be socketed at the Telelocator Focus, and used to teleport to one by focusing.",
+        VAULT_COMPASS = "A compass left by one of the last builders of this place. It could lead somewhere important.",
+        VAULT_KEY_PEDESTAL = "Maybe this one will help you get home.",
+        VAULT_REFINER_PEDESTAL = "Break down some orbs in the mean time.",
     },
 
     -- Full name: "{name} Scrapbook Page"
@@ -18534,6 +18682,8 @@ STRINGS.TEMP_BETA_MSG =
 	RIFTS5_KILLTIME_FMT = "You defeated {name} in {time}s.",
 	--
 	RIFTS6_BASIC = "Thanks for playing the beta!\nThe room beyond this point is not yet available.",
+	--
+	RIFTS7_FMT = "You defeated all beta {name}s!\nAdditional loot and rewards coming soon...",
 }
 
 --Don't include this in pot generation as this file is already translated.

@@ -1301,7 +1301,7 @@ function PlayerController:DoControllerAttackButton(target)
             return
         end
 
-        if not self.inst.replica.combat:CanHitTarget(target) or
+		if not self.inst.replica.combat:LocomotorCanAttack(nil, target) or
             IsEntityDead(target, true) or
             not CanEntitySeeTarget(self.inst, target) then
             return
@@ -1416,7 +1416,7 @@ end
 function PlayerController:DoControllerDropItemFromInvTile(item, single)
 	if item and item.replica.inventoryitem and
 		(	not item.replica.inventoryitem:IsLockedInSlot() or
-			(single and inventoryitem.replica.stackable and inventoryitem.replica.stackable:IsStack())
+			(single and item.replica.stackable and item.replica.stackable:IsStack())
 		)
 	then
 		self.inst.replica.inventory:DropItemFromInvTile(item, single)
@@ -4580,7 +4580,11 @@ function PlayerController:DoAction(buffaction, spellbook)
         if highlight_guy.components.highlight == nil then
             highlight_guy:AddComponent("highlight")
         end
-        highlight_guy.components.highlight:Flash(.2, .125, .1)
+        local flashadd, flashtimein, flashtimeout = .2, .125, .1
+        if highlight_guy.highlightflashaddoverride then
+            flashadd = highlight_guy.highlightflashaddoverride
+        end
+        highlight_guy.components.highlight:Flash(flashadd, flashtimein, flashtimeout)
     end
 
     --Clear any buffered attacks since we're starting a new action
@@ -5855,18 +5859,21 @@ local function OnNewState(inst)--, data)
 end
 
 function PlayerController:OnRemoteToggleMovementPrediction(val)
-	if self.ismastersim and self.remote_predicting ~= val then
+	if self.ismastersim then
+		local dirty = self.remote_predicting ~= val
 		self.remote_predicting = val
 		self.locomotor:Stop()
 		self.locomotor:Clear()
 		self.locomotor:SetAllowPlatformHopping(not val)
 		self:ResetRemoteController()
-		if val then
-			self.inst:ListenForEvent("newstate", OnNewState)
-			self.classified.currentstate:set(self.inst.sg.currentstate ~= nil and self.inst.sg.currentstate.name or 0)
-		else
-			self.inst:RemoveEventCallback("newstate", OnNewState)
-			self.classified.currentstate:set(0)
+		if dirty then
+			if val then
+				self.inst:ListenForEvent("newstate", OnNewState)
+				self.classified.currentstate:set(self.inst.sg.currentstate and self.inst.sg.currentstate.name or 0)
+			else
+				self.inst:RemoveEventCallback("newstate", OnNewState)
+				self.classified.currentstate:set(0)
+			end
 		end
 	end
 end
