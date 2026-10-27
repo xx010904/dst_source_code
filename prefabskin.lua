@@ -1723,8 +1723,8 @@ armor_voidcloth_clear_fn = function(inst) basic_clear_fn(inst, "armor_voidcloth"
 armor_rocky_init_fn = function(inst, build_name) basic_init_fn(inst, build_name, "armor_rocky") end
 armor_rocky_clear_fn = function(inst) basic_clear_fn(inst, "armor_rocky") end
 
-bat_bosscorpsehat_init_fn = function(inst, build_name) basic_init_fn(inst, build_name, "bat_bosscorpsehat") end
-bat_bosscorpsehat_clear_fn = function(inst) basic_clear_fn(inst, "bat_bosscorpsehat") end
+bat_bosscorpsehat_init_fn = function(inst, build_name) basic_init_fn(inst, build_name, "hat_bat_bosscorpse") end
+bat_bosscorpsehat_clear_fn = function(inst) basic_clear_fn(inst, "hat_bat_bosscorpse") end
 
 king_cane_init_fn = function(inst, build_name)
     basic_init_fn(inst, build_name, "king_cane")
@@ -1732,12 +1732,22 @@ king_cane_init_fn = function(inst, build_name)
         inst.fx.AnimState:OverrideItemSkinSymbol("swap_king_cane_art", build_name, "swap_king_cane_art", inst.GUID, "king_cane")
         inst.fx.AnimState:OverrideItemSkinSymbol("king_cane01", build_name, "king_cane01", inst.GUID, "king_cane")
     end
+    if inst.gem then
+        inst.components.inventoryitem:ChangeImageName(build_name .. "_" .. inst.gem)
+    else
+        inst.components.inventoryitem:ChangeImageName(build_name)
+    end
 end
 king_cane_clear_fn = function(inst)
     basic_clear_fn(inst, "king_cane")
     if inst.fx then
         inst.fx.AnimState:ClearOverrideSymbol("swap_king_cane_art")
         inst.fx.AnimState:ClearOverrideSymbol("king_cane01")
+    end
+    if inst.gem then
+        inst.components.inventoryitem:ChangeImageName("king_cane_" .. inst.gem)
+    else
+        inst.components.inventoryitem:ChangeImageName("king_cane")
     end
 end
 
@@ -3124,11 +3134,24 @@ local function cane_do_trail(inst)
     if offset ~= nil then
         local fx = SpawnPrefab(inst.trail_fx)
         fx.Transform:SetPosition(x + offset.x, 0, z + offset.z)
-        if fx.SetOwnerAffinity and owner.components.skilltreeupdater then
-            if owner.components.skilltreeupdater:HasSkillTag("lunar_favor") then
-                fx:SetOwnerAffinity("LUNAR")
-            elseif owner.components.skilltreeupdater:HasSkillTag("shadow_favor") then
-                fx:SetOwnerAffinity("SHADOW")
+        if fx.SetOwnerAffinity then
+            local skilltreeowner = owner
+            if skilltreeowner.prefab == "wx78_backupbody_inventory" then
+                -- Hack to move the reference to the backupbody.
+                local parent = skilltreeowner.entity:GetParent()
+                if parent and parent.prefab == "wx78_backupbody" then
+                    skilltreeowner = parent
+                end
+            end
+            if skilltreeowner.wx78_classified then
+                skilltreeowner = skilltreeowner.wx78_classified:GetOwningPlayer() or skilltreeowner
+            end
+            if skilltreeowner.components.skilltreeupdater then
+                if skilltreeowner.components.skilltreeupdater:HasSkillTag("lunar_favor") then
+                    fx:SetOwnerAffinity("LUNAR")
+                elseif skilltreeowner.components.skilltreeupdater:HasSkillTag("shadow_favor") then
+                    fx:SetOwnerAffinity("SHADOW")
+                end
             end
         end
         if fx.TrackOwnerAndCane then

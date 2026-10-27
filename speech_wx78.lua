@@ -6345,7 +6345,7 @@ return{
         ATRIUM_RITUAL_ORGAN_WORM =
         {
             GENERIC = "POOPSACK FROM A FLESHSACK",
-            IN_RITUAL = "DISGUSTING PAYLOAD SECURED`", -- it's floating as part of the ritual circle (can reuse same string for all IN_RITUAL)
+            IN_RITUAL = "DISGUSTING PAYLOAD SECURED", -- it's floating as part of the ritual circle (can reuse same string for all IN_RITUAL)
         },
 
 		CHARLIE_BOSS = "HOST CORRUPTED",
@@ -6367,6 +6367,16 @@ return{
         CHARLIEARENA_TELEPORTER = "LEAVE NO ITEMS BEHIND",
 
         MASK_CHARLIE_BOSSHAT = "SPECIMEN DEFEATED. TROPHY ACQUIRED",
+
+        -- Halloween 2026
+        LEAFPILE = "FILTHY TREES LITTERING EVERYWHERE",
+        PUMPKIN_BOMB = "DETONATION WILL ENHANCE FESTIVE ATMOSPHERE", -- heavy and does knockback on its explosion, sends out pumpkin chunks on explode
+        WITCHBROOM =
+        {
+            GENERIC = "CHORES ARE BENEATH ME", -- normal version
+            LIVING = "BROOM IS CORRUPTED",
+        },
+
     },
 
     DESCRIBE_GENERIC = "ERROR: UNKNOWN",
